@@ -26,6 +26,8 @@
 		BEA1DDDC1BE31DB800E43A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEA1DDE21BE31EF700E43A21 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		BEA1DDE41BE3216C00E43A21 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BEA1DDE61BE322D700E43A21 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		BEA1DDE71BE322D700E43A21 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,8 @@
 		BEA1DDC21BE31DB800E43A21 = {
 			isa = PBXGroup;
 			children = (
+				BEA1DDE61BE322D700E43A21 /* LICENSE.md */,
+				BEA1DDE71BE322D700E43A21 /* README.md */,
 				BEA1DDCD1BE31DB800E43A21 /* WordScramble */,
 				BEA1DDCC1BE31DB800E43A21 /* Products */,
 			);

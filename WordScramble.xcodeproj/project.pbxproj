@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		BEA1DDCF1BE31DB800E43A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1DDCE1BE31DB800E43A21 /* AppDelegate.swift */; };
 		BEA1DDD11BE31DB800E43A21 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1DDD01BE31DB800E43A21 /* MasterViewController.swift */; };
-		BEA1DDD31BE31DB800E43A21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1DDD21BE31DB800E43A21 /* DetailViewController.swift */; };
 		BEA1DDD61BE31DB800E43A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA1DDD41BE31DB800E43A21 /* Main.storyboard */; };
 		BEA1DDD81BE31DB800E43A21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA1DDD71BE31DB800E43A21 /* Assets.xcassets */; };
 		BEA1DDDB1BE31DB800E43A21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA1DDD91BE31DB800E43A21 /* LaunchScreen.storyboard */; };
+		BEA1DDE31BE31EF700E43A21 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = BEA1DDE21BE31EF700E43A21 /* start.txt */; };
+		BEA1DDE51BE3216C00E43A21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1DDE41BE3216C00E43A21 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BEA1DDCB1BE31DB800E43A21 /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA1DDCE1BE31DB800E43A21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA1DDD01BE31DB800E43A21 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		BEA1DDD21BE31DB800E43A21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BEA1DDD51BE31DB800E43A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEA1DDD71BE31DB800E43A21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA1DDDA1BE31DB800E43A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEA1DDDC1BE31DB800E43A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEA1DDE21BE31EF700E43A21 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
+		BEA1DDE41BE3216C00E43A21 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +58,10 @@
 		BEA1DDCD1BE31DB800E43A21 /* WordScramble */ = {
 			isa = PBXGroup;
 			children = (
+				BEA1DDE21BE31EF700E43A21 /* start.txt */,
 				BEA1DDCE1BE31DB800E43A21 /* AppDelegate.swift */,
+				BEA1DDE41BE3216C00E43A21 /* DetailViewController.swift */,
 				BEA1DDD01BE31DB800E43A21 /* MasterViewController.swift */,
-				BEA1DDD21BE31DB800E43A21 /* DetailViewController.swift */,
 				BEA1DDD41BE31DB800E43A21 /* Main.storyboard */,
 				BEA1DDD71BE31DB800E43A21 /* Assets.xcassets */,
 				BEA1DDD91BE31DB800E43A21 /* LaunchScreen.storyboard */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA1DDDB1BE31DB800E43A21 /* LaunchScreen.storyboard in Resources */,
+				BEA1DDE31BE31EF700E43A21 /* start.txt in Resources */,
 				BEA1DDD81BE31DB800E43A21 /* Assets.xcassets in Resources */,
 				BEA1DDD61BE31DB800E43A21 /* Main.storyboard in Resources */,
 			);
@@ -138,7 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA1DDD31BE31DB800E43A21 /* DetailViewController.swift in Sources */,
+				BEA1DDE51BE3216C00E43A21 /* DetailViewController.swift in Sources */,
 				BEA1DDD11BE31DB800E43A21 /* MasterViewController.swift in Sources */,
 				BEA1DDCF1BE31DB800E43A21 /* AppDelegate.swift in Sources */,
 			);

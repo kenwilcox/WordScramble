@@ -11,7 +11,7 @@ import GameplayKit
 
 class MasterViewController: UITableViewController {
   
-  var objects = [AnyObject]()
+  var objects = [String]()
   var allWords = [String]()
   
   override func viewDidLoad() {
@@ -93,7 +93,7 @@ class MasterViewController: UITableViewController {
   }
   
   func wordIsOriginal(word: String) -> Bool {
-    return true
+    return !objects.contains(word)
   }
   
   func wordIsReal(word: String) -> Bool {
@@ -113,7 +113,7 @@ class MasterViewController: UITableViewController {
     let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
     
     let object = objects[indexPath.row]
-    cell.textLabel!.text = object as? String
+    cell.textLabel!.text = object
     return cell
   }
   

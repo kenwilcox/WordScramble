@@ -14,6 +14,7 @@
 		BEA1DDDB1BE31DB800E43A21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA1DDD91BE31DB800E43A21 /* LaunchScreen.storyboard */; };
 		BEA1DDE31BE31EF700E43A21 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = BEA1DDE21BE31EF700E43A21 /* start.txt */; };
 		BEA1DDE51BE3216C00E43A21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1DDE41BE3216C00E43A21 /* DetailViewController.swift */; };
+		BEA1DDEB1BE8829700E43A21 /* ErrorAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA1DDEA1BE8829700E43A21 /* ErrorAnswer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BEA1DDE41BE3216C00E43A21 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BEA1DDE61BE322D700E43A21 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		BEA1DDE71BE322D700E43A21 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BEA1DDEA1BE8829700E43A21 /* ErrorAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAnswer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				BEA1DDE21BE31EF700E43A21 /* start.txt */,
 				BEA1DDCE1BE31DB800E43A21 /* AppDelegate.swift */,
+				BEA1DDEA1BE8829700E43A21 /* ErrorAnswer.swift */,
 				BEA1DDE41BE3216C00E43A21 /* DetailViewController.swift */,
 				BEA1DDD01BE31DB800E43A21 /* MasterViewController.swift */,
 				BEA1DDD41BE31DB800E43A21 /* Main.storyboard */,
@@ -148,6 +151,7 @@
 			files = (
 				BEA1DDE51BE3216C00E43A21 /* DetailViewController.swift in Sources */,
 				BEA1DDD11BE31DB800E43A21 /* MasterViewController.swift in Sources */,
+				BEA1DDEB1BE8829700E43A21 /* ErrorAnswer.swift in Sources */,
 				BEA1DDCF1BE31DB800E43A21 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +269,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.k3nx.WordScramble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -276,6 +281,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.k3nx.WordScramble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

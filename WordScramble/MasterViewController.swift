@@ -22,17 +22,14 @@ class MasterViewController: UITableViewController {
     if let startWordsPath = NSBundle.mainBundle().pathForResource("start", ofType: "txt") {
       if let startWords = try? String(contentsOfFile: startWordsPath, usedEncoding: nil) {
         allWords = startWords.componentsSeparatedByString("\n")
+      } else {
+        loadDefaultWords()
       }
     } else {
-      allWords = ["silkworm"]
+      loadDefaultWords()
     }
     
     startGame()
-    
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem()
-//    
-//    let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-//    self.navigationItem.rightBarButtonItem = addButton
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -43,6 +40,10 @@ class MasterViewController: UITableViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  func loadDefaultWords() {
+    allWords = ["silkworm"]
   }
   
   func startGame() {
@@ -56,18 +57,11 @@ class MasterViewController: UITableViewController {
     let ac = UIAlertController(title: "Enter answer", message: nil, preferredStyle: .Alert)
     ac.addTextFieldWithConfigurationHandler(nil)
 
-    // I think I actually prefer this syntax
-//    let someAction = UIAlertAction(title: "Title", style: .Default) { (UIAlertAction) -> Void in
-//      let answer = ac.textFields![0]
-//      self.submitAnswer(answer.text!)
-//    }
-    
     let submitAction = UIAlertAction(title: "Submit", style: .Default) {
       [unowned self, ac] (action: UIAlertAction!) in
       let answer = ac.textFields![0]
       self.submitAnswer(answer.text!)
     }
-//    ac.addAction(someAction)
     ac.addAction(submitAction)
     
     presentViewController(ac, animated: true, completion: nil)
@@ -75,35 +69,36 @@ class MasterViewController: UITableViewController {
   
   func submitAnswer(answer: String) {
     let lowerAnswer = answer.lowercaseString
+    var error = ErrorAnswer.None
     
-    let errorTitle: String
-    let errorMessage: String
+    if !wordIsNotAnswer(lowerAnswer) {error.insert(.WordIsAnswer)}
+    if !wordIsPossible(lowerAnswer) {error.insert(.WordIsPossible)}
+    if !wordIsOriginal(lowerAnswer) {error.insert(.WordIsOriginal)}
+    if !wordIsReal(lowerAnswer) {error.insert(.WordIsReal)}
     
-    if wordIsPossible(lowerAnswer) {
-      if wordIsOriginal(lowerAnswer) {
-        if wordIsReal(lowerAnswer) {
-          objects.insert(answer, atIndex: 0)
-          
-          let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-          tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-          return
-          
-        } else {
-          errorTitle = "Word not recognized"
-          errorMessage = "You can't just make them up, you know!"
-        }
-      } else {
-        errorTitle = "Word used already"
-        errorMessage = "Be more original!"
-      }
-    } else {
-      errorTitle = "Word not possible"
-      errorMessage = "You can't spell that word from '\(title!.lowercaseString)'!"
+    
+    switch(error) {
+    case _ where error.contains(.WordIsOriginal): showErrorMessage("Word used already", errorMessage: "Be more original!")
+    case _ where error.contains(.WordIsPossible): showErrorMessage("Word not possible", errorMessage: "You can't spell that word from '\(title!.lowercaseString)'!")
+    case _ where error.contains(.WordIsAnswer): showErrorMessage("Word is the clue", errorMessage: "You can't use the same word as the clue!")
+    case _ where error.contains(.WordIsReal): showErrorMessage("Word not recognized", errorMessage: "You can't just make them up, you know!")
+      // If you made if this far you can add a word
+    default:
+      objects.insert(answer, atIndex: 0)
+      let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+      tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
-    
+  }
+  
+  func showErrorMessage(errorTitle: String, errorMessage: String) {
     let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .Alert)
     ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
     presentViewController(ac, animated: true, completion: nil)
+  
+  }
+  
+  func wordIsNotAnswer(word: String) -> Bool {
+    return word.lowercaseString != title!.lowercaseString
   }
   
   func wordIsPossible(word: String) -> Bool {
